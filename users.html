@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/08958affb8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="bgtext">
+  </div>
+  <div class="bgtext2">
+  </div>
+  <div class="bgtext3">
+  </div>
+  <div class="bgtext4">
+  </div>
+  <div class="bgtext5">
+  </div>
+  <div class="sign-out">
+    <button class="sign-out-button hover_button" onclick="logout()">
+      Выход
+    </button>
+  </div>
+  <div>
+    <h1 class="title_task">Планировщик задач</h1>
+  </div>
+  <div class="container">
+    <form id="form" class="todo-form">
+      <div>
+        <label for="todos"></label>
+        <input type="text" id="todos" class="input_task" required />
+      </div>
+    </form>
+    <div id="todo-container"></div>
+    <div class="buttons">
+      <button id="all" onclick="filterHandler('all')" class="button button1 btn-two">
+        Показать все
+      </button>
+      <button id="open" onclick="filterHandler('open')" class="button button2 btn-two">
+        В процессе
+      </button>
+      <button id="finished" onclick="filterHandler('completed')" class="button button3 btn-two">
+        Завершенные
+      </button>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAcb5IcHDwlArBOMAM62YciXx7ECF4G1HY",
+      authDomain: "todos-b59d0.firebaseapp.com",
+      projectId: "todos-b59d0",
+      storageBucket: "todos-b59d0.appspot.com",
+      messagingSenderId: "852019592848",
+      appId: "1:852019592848:web:fe9728ae7c6c022afae215",
+      measurementId: "G-2RTKHPR3R4"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+
+  <script src="js/users.js"></script>
+</body>
+
+</html>
